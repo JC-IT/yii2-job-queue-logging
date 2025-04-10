@@ -11,9 +11,17 @@
         }
     ],
     "require": {
-        "php": ">=8.0",
+        "php": ">=8.3",
 
-        "jc-it/yii2-job-queue": "^2.0"
+        "jc-it/yii2-job-queue": "^3.0"
+    },
+    "require-dev": {
+        "brainmaestro/composer-git-hooks": "^3.0",
+        "codeception/codeception":  "^5.2",
+        "codeception/module-yii2": "^2.0",
+        "codeception/module-asserts": "^3.0",
+        "scrutinizer/ocular": "^1.9",
+        "squizlabs/php_codesniffer": "^3.12"
     },
     "repositories": [
         {
@@ -32,7 +40,7 @@
         }
     },
     "scripts": {
-        "post-install-cmd": "cghooks add --ignore-lock",
+        "post-install-cmd": "vendor/bin/cghooks add --ignore-lock",
         "test": "vendor/bin/codecept run --coverage",
         "lint": "vendor/bin/phpcs",
         "lint-fix": "vendor/bin/phpcbf"
